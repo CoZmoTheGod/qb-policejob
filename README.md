@@ -1,57 +1,5 @@
-# qb-policejob multi-department fork
-## **If your qb-core was installed before June 2022, please update or this will NOT work!!**
-
-I created this fork with the help of Omen#1072 (big shoutout for helping me with all my errors) and Wafflz#6164 (for fixing blips and forking to fix issues with other qb resources) . This fork supports multi-department functions by changing `PlayerJob.name == "police" with PlayerJob.type == "leo"`.
-Now when creating jobs anything with `"type = leo"` will be LEO. Here's an example of my jobs.lua in qb-core/shared/jobs.lua
-This will replace your current qb-policejob folder
-
-```
-['sasp'] = {
-		label = 'San Andreas State Police',
-        	type = "leo",
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            ['0'] = {
-                name = 'Probationary Trooper',
-                payment = 100
-            },
-		['1'] = {
-                name = 'Trooper I',
-                payment = 125
-            },
-	},
-	['bcso'] = {
-		label = 'Blaine County Sheriffs Office',
-        	type = "leo",
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            ['0'] = {
-                name = 'Cadet/Probationary',
-                payment = 75
-            },
-		['1'] = {
-                name = 'Deputy I',
-                payment = 100
-            },
-	},
-	['lspd'] = {
-		label = 'Los Santos Police Department',
-        	type = "leo",
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            ['0'] = {
-                name = 'Cadet/Probationary',
-                payment = 75
-            },
-		['1'] = {
-                name = 'Officer I',
-                payment = 100
-        },
-}
-```
+# qb-policejob
+Police Job for QB-Core Framework :police_officer:
 
 # License
 
