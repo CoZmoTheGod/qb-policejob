@@ -21,10 +21,22 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         ShowHeadingIndicatorOnBlip(blip, true)
         SetBlipRotation(blip, math.ceil(playerLocation.w))
         SetBlipScale(blip, 1.0)
-        if playerJob == "lspd" or playerJob == "bcso" or playerJob == "sast" then
-            SetBlipColour(blip, 38)
-        else
+        if playerJob == "police" then
             SetBlipColour(blip, 5)
+		elseif playerJob == "lspd" then
+            SetBlipColour(blip, 29)
+		elseif playerJob == "bcso" then
+            SetBlipColour(blip, 25)
+		elseif playerJob == "sasp" then
+            SetBlipColour(blip, 3)
+		elseif playerJob == "fib" then
+            SetBlipColour(blip, 5)
+		--elseif playerJob == "fire" then
+            --SetBlipColour(blip, 49)
+		elseif playerJob == "ambulance" then
+            SetBlipColour(blip, 12)
+        else
+            SetBlipColour(blip, 3)
         end
         SetBlipAsShortRange(blip, true)
         BeginTextCommandSetBlipName('STRING')
@@ -71,7 +83,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         TriggerEvent('qb-clothing:client:loadOutfit', trackerClothingData)
     end
 
-    if PlayerJob and PlayerJob.type ~= "leo" then
+    if PlayerJob and PlayerJob.name ~= "police" or PlayerJob.name ~= "lspd" or PlayerJob.name ~= "bcso" or PlayerJob.name ~= "sasp" or PlayerJob.name ~= "fbi" or PlayerJob.name ~= "iaa" then
         if DutyBlips then
             for _, v in pairs(DutyBlips) do
                 RemoveBlip(v)
@@ -99,14 +111,14 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
-    if JobInfo.type == "leo" and PlayerJob.type ~= "leo" then
+    if JobInfo.name == "police" or JobInfo.name == "lspd" or JobInfo.name == "bcso" or JobInfo.name == "sasp" or JobInfo.name == "fbi" or JobInfo.name == "iaa" and PlayerJob.name ~= "police" or PlayerJob.name ~= "lspd" or PlayerJob.name ~= "bcso" or PlayerJob.name ~= "sasp" or PlayerJob.name ~= "fbi" or PlayerJob.name ~= "iaa" then
         if JobInfo.onduty then
             TriggerServerEvent("QBCore:ToggleDuty")
             onDuty = false
         end
     end
 
-    if JobInfo.type ~= "leo" then
+    if JobInfo.name ~= "police" or JobInfo.name ~= "lspd" or JobInfo.name ~= "bcso" or JobInfo.name ~= "sasp" or JobInfo.name ~= "fbi" or JobInfo.name ~= "iaa" then
         if DutyBlips then
             for _, v in pairs(DutyBlips) do
                 RemoveBlip(v)
@@ -135,7 +147,7 @@ RegisterNetEvent('police:client:sendBillingMail', function(amount)
 end)
 
 RegisterNetEvent('police:client:UpdateBlips', function(players)
-    if PlayerJob and (PlayerJob.type == 'leo' or PlayerJob.name == 'ambulance') and
+    if PlayerJob and (PlayerJob.name == 'police' or PlayerJob.name == 'lspd' or PlayerJob.name == 'bcso' or PlayerJob.name == 'sasp' or PlayerJob.name == 'fbi' or PlayerJob.name == 'iaa' or PlayerJob.name == 'ambulance') and
         onDuty then
         if DutyBlips then
             for _, v in pairs(DutyBlips) do
