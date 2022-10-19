@@ -101,63 +101,39 @@ Config.SecurityCameras = {
     },
 }
 
-Config.AuthorizedVehicles = {
-	-- Grade 0
-	[0] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
-	},
-	-- Grade 1
+Config.AuthorizedVehiclesLSPD = {
+    -- LSPD
 	[1] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+		["police"] = "Police",
+	},
+}
 
+Config.AuthorizedVehiclesBCSO = {
+    -- BCSO
+	[1] = {
+		["police"] = "Police",
 	},
-	-- Grade 2
-	[2] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+}
+
+Config.AuthorizedVehiclesSASP = {
+    -- SASP
+	[1] = {
+		["police"] = "Police",
 	},
-	-- Grade 3
-	[3] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+}
+
+Config.AuthorizedVehiclesFBI = {
+    -- FBI
+	[1] = {
+		["police"] = "Police",
 	},
-	-- Grade 4
-	[4] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
-	}
+}
+
+Config.AuthorizedVehiclesIAA = {
+    -- IAA
+	[1] = {
+		["police"] = "Police",
+	},
 }
 
 Config.WhitelistedVehicles = {}
