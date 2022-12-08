@@ -1,3 +1,6 @@
+You MUST add these jobs to your jobs.lua or this will NOT work!
+LSPD, BCSO, SASP, FBI, IAA
+
 # qb-policejob
 Police Job for QB-Core Framework :police_officer:
 
