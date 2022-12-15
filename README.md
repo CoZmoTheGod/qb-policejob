@@ -1,4 +1,5 @@
-You MUST add these jobs to your jobs.lua or this will NOT work!
+##You MUST add these jobs to your jobs.lua or this will NOT work!##
+This version already has the departments created, you will have to add the jobs to jobs.lua!
 LSPD, BCSO, SASP, FBI, IAA
 
 # qb-policejob
